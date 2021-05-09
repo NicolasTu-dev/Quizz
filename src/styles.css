@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background: #b92b27;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.btn-principal{
+    height: 3.125rem;
+    background-color: rgb(51,51,51);
+    border-color: rgba (0,0,0,0.1);
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.titulo{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-titulo{
+    padding: 0px 22px;
+}

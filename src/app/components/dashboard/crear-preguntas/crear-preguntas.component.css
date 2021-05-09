@@ -1,0 +1,56 @@
+.inputPregunta{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+}
+
+.fondo-item{
+    background-color: #131d2d;
+    border-radius: 20px;
+    height: 140px;
+}
+
+.tituloSegundosPuntos{
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.segPuntos{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+}
+
+.sumaResta{
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: #273346;
+    padding: 7px;
+    border-radius: 15px;
+    margin-left: 3px;
+}
+
+.form-range{
+    padding: 0px 30px;
+}
+
+input[type=range]::-webkit-slider-thumb{
+    background: white;
+    font-size: 1.5rem;
+}
+
+.inputRespuesta{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.far, .fas{
+    font-size: 24px;
+    cursor: pointer;
+}

@@ -1,0 +1,51 @@
+
+<div class="d-flex justify-content-center mt-3">
+    <button routerLink="/dashboard/crearQuizz" class="btn-principal btn-quizz">NUEVO</button>
+</div>
+<div *ngIf="loading"class="d-flex justify-content-center mt-3">
+<app-spinner></app-spinner>
+</div>
+<div *ngIf="listCuestionarios.length>0 && !loading" class="container">
+    <div class="row mt-3">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Titulo</th>
+                                <th>Cant. Preguntas</th>
+                                <th>PIN</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cuestionario of listCuestionarios">
+                                <td>{{cuestionario.titulo}}</td>
+                                <td>{{cuestionario.cantPreguntas}}</td>
+                                <td><span class="badge bg-black">{{cuestionario.codigo}}</span></td>
+                                <td>
+                                    <i [routerLink]="['/dashboard/verCuestionario', cuestionario.id]"  class="fas fa-search"></i>
+                                    <i [routerLink]="['/dashboard/estadisticas', cuestionario.id]" class="fas fa-chart-line"></i>
+                                    <i (click)="eliminarCuestionario(cuestionario.id!)" class="fas fa-trash"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="listCuestionarios.length == 0 && !loading" class="container">
+    <div class="row mt-3">
+        <div class="col lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5>No hay cuestionarios para mostrar</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

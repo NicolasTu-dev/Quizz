@@ -1,0 +1,11 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.contador{
+    font-size: 300px;
+}

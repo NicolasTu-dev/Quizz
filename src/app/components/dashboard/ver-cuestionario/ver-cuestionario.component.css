@@ -1,0 +1,14 @@
+.badge{
+    font-size: 1rem;
+}
+
+.list-group-item{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+.classCorrecta{
+    background-color: #131d2d;
+    color: white;
+}

@@ -1,0 +1,25 @@
+.tituloPregunta{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.list-group-item{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    text-align: center;
+}
+
+.classCorrecta{
+    background-color: #131d2d;
+    color: white;
+}
+
+.fas {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    color: #a71c2B;
+}

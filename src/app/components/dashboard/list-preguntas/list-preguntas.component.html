@@ -1,0 +1,35 @@
+<div *ngIf="loading" class="d-flex justify-content-center mt-3">
+    <app-spinner></app-spinner>
+</div>
+<div *ngIf="listPreguntas.length > 0 && loading == false" class="row mt-3">
+    <div class="col-lg-8 offset-lg-2">
+        <div *ngFor="let pregunta of listPreguntas; let i= index" class="card mb-3">
+            <div class="card-body text-center">
+                <p class="tituloPregunta">{{pregunta.titulo}}</p>
+                <div class="row">
+                    <div class="col-6">
+                        <p><span class="badge bg-dark">{{ pregunta.segundos }}seg</span></p>
+                    </div>
+                    <div class="col-6">
+                        <p><span class="badge bg-dark">{{ pregunta.puntos }} ptos</span></p>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <li *ngFor="let respuesta of pregunta.listRespuestas" class="list-group-item" [ngClass]="{ 'classCorrecta': respuesta.esCorrecta === true }">
+                        {{respuesta.descripcion}}
+                    </li>
+                </ul>
+                <div>
+                    <i (click)="eliminarPregunta(i)" class="fas fa-trash"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3 mb-3">
+            <div class="col-12 text-center">
+                <button (click)="finalizarCuestionario()" style="width: 100%; font-size: 28px;" class="btn-principal">
+                    FINALIZAR CUESTIONARIO
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

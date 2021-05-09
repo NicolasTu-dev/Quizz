@@ -1,0 +1,32 @@
+.contadorPregunta{
+    font-size: 8rem;
+}
+
+.list-group-item{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    cursor: pointer;
+}
+
+.classSeleccionada{
+    background-color: #131d2d;
+    color: white;
+}
+
+.btn-aceptar{
+    width: 100%;
+    font-size: 20px;
+}
+
+.btn-aceptar:hover {
+    color:white
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}

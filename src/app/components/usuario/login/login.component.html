@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div *ngIf="loading" class="d-flex justify-content-center mt-5">
+        <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!loading" class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center titulo">Login</h2>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="usuario" class="form-control form-control-lg" placeholder="Correo">
+                            <span class="text-danger" 
+                            *ngIf="loginForm.get('usuario')?.hasError('required') && loginForm.get('usuario')?.touched">
+                                El correo <strong>es requerido</strong>
+                            </span>
+                            <span class="text-danger" *ngIf="loginForm.get('usuario')?.hasError('email') && loginForm.get('usuario')?.touched">
+                                Correo <strong>invalido</strong>
+                            </span>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Contraseña">
+                            <span class="text-danger" 
+                            *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+                                El password <strong>es requerido</strong>
+                            </span>
+                        </div>
+                        <button class="btn btn-secondary btn-lg" routerLink="/">Volver</button>
+                        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary btn-lg float-end">Aceptar</button>
+                    </form>
+                    <br>
+                    <div class="text-center">
+                        <a routerLink="/usuario/registro">Registrarse</a>
+                        <br>
+                        <a routerLink="/usuario/recuperarPassword">Recuperar Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

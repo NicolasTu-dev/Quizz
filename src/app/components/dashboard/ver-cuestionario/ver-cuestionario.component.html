@@ -1,0 +1,42 @@
+<div *ngIf="loading" class="d-flex justify-content-center mt-5">
+    <app-spinner></app-spinner>
+</div>
+<div *ngIf="cuestionario != undefined" class="container mt-3">
+    <div class="d-flex justify-content-center mt-3">
+        <div class="card card-titulo">
+            <div class="card-body text-center">
+                <h2 class="titulo">{{ cuestionario.titulo | uppercase }}</h2>
+                <h4>{{ cuestionario.descripcion }}</h4>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let pregunta of cuestionario.listPreguntas" class="row mt-5">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                        <h4 class="titulo">{{ pregunta.titulo }}</h4>
+                        <div class="row mt-3">
+                            <div class="col-lg-3 offset-lg-3">
+                                <p><span class="badge bg-dark">{{ pregunta.segundos }} seg</span></p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p><span class="badge bg-dark">{{ pregunta.puntos }} puntos</span></p>
+                            </div>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item"
+                                *ngFor="let respuesta of pregunta.listRespuestas"
+                                [ngClass]="{  'classCorrecta': respuesta.esCorrecta === true  }">
+                                {{ respuesta.descripcion }}  
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3 mb-3">
+        <div class="col-lg-8 offset-lg-2 text-center">
+            <button routerLink="/dashboard" class="btn-principal" style= "width:100%; font-size: 20px;">VOLVER</button>
+        </div>
+    </div>
+</div>

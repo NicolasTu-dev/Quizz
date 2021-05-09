@@ -1,0 +1,25 @@
+<div *ngIf="loading" class="contenedor">
+    <app-spinner></app-spinner>
+</div>
+
+<div *ngIf="!loading" class="container mt-3">
+    <div class="d-flex justify-content-center mt-3">
+        <h1 class="titulo contadorPregunta">{{  obtenerSegundos()  }}</h1>
+    </div>
+    <div class="row mt-2">
+        <div class="text-center">
+            <h3 class="titulo">{{ obtenerTitulo() }}</h3>
+            <div class="col-lg-6 offset-lg-3">
+                <ul class="list-group mt-3">
+                    <li *ngFor="let respuesta of cuestionario.listPreguntas[indexPregunta].listRespuestas; let i = index" 
+                    class="list-group-item animate__animated animate__fadeIn" 
+                    (click)="respuestaSeleccionada(respuesta, i)"
+                    [ngClass]="addClassOption(respuesta)">
+                        {{ respuesta.descripcion }}
+                    </li>
+                </ul>
+                <button (click)="siguiente()" [disabled]="opcionSeleccionada == null" class="btn btn-principal btn-aceptar mt-3">ACEPTAR</button>
+            </div>
+        </div>
+    </div>
+</div>

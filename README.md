@@ -1,5 +1,5 @@
 # Quizz
-Este es un cuestionario que se uso con tecnologias de angular + firebase.
+Este es un cuestionario que se creo con tecnologias de angular + firebase.
 
 Link para el quizz: https://quizz-f3e61.web.app/
 
